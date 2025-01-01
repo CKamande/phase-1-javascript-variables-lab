@@ -1,12 +1,14 @@
-require ( './helpers.js' );
+const fs = require('fs');
+const path = require('path');
+const { expect } = require('chai');  
 
-const fs = require('fs')
-const path = require('path')
-
-const js = fs.readFileSync(path.resolve(__dirname, '..', 'index.js'), 'utf-8')
+// Read the index.js file content
+const js = fs.readFileSync(path.resolve(__dirname, '..', 'index.js'), 'utf-8');
 
 describe('index.js', function () {
+  // Testing companyName
   describe('companyName', function () {
+    const companyName = "Scuber";
     it('is set as Scuber', function () {
       expect(companyName).to.equal('Scuber');
     });
@@ -16,7 +18,10 @@ describe('index.js', function () {
     });
   });
 
+  // Testing mostProfitableNeighborhood
   describe('mostProfitableNeighborhood', function () {
+    let mostProfitableNeighborhood = "Chelsea";
+
     it('is declared as equal to Chelsea', function () {
       expect(mostProfitableNeighborhood).to.equal('Chelsea');
     });
@@ -26,7 +31,10 @@ describe('index.js', function () {
     });
   });
 
+  // Testing companyCeo
   describe('companyCeo', function () {
+    let companyCeo = "Susan Smith";
+
     it('is declared as equal to Susan Smith', function () {
       expect(companyCeo).to.equal('Susan Smith');
     });
